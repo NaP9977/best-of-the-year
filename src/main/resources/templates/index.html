@@ -7,6 +7,9 @@
 <body>
 <h1>The best of th year by...</h1>
 <span th:text="${name}"></span>
+<ul th:if="${bestMovies.size() > 0}" class="list-group">
+    <li class="list-group-item" th:each="movies : ${bestMovies}" th:text="|${bestMovies.id} ${bestMovies.name}|"></li>
+
 
 </body>
 </html>

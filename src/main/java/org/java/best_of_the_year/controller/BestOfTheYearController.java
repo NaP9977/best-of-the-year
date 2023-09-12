@@ -66,5 +66,15 @@ public class BestOfTheYearController {
        return bestSongs;
    }
 
+@GetMapping("/movies")
+    public String bestMovies(Model model) {
+    model.addAttribute("bestMovies", getBestMovies());
+    return "index";
+}
+@GetMapping("/songs")
+    public String bestSongs(Model model){
+       model.addAttribute("bestSongs", getBestSongs());
+       return "index";
 
+   }
 }
