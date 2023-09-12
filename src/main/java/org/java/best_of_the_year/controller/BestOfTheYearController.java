@@ -69,12 +69,12 @@ public class BestOfTheYearController {
 @GetMapping("/movies")
     public String bestMovies(Model model) {
     model.addAttribute("bestMovies", getBestMovies());
-    return "index";
+    return "movies";
 }
 @GetMapping("/songs")
     public String bestSongs(Model model){
        model.addAttribute("bestSongs", getBestSongs());
-       return "index";
+       return "songs";
 
    }
 }

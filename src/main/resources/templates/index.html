@@ -2,14 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Best of the Year</title>
 </head>
 <body>
-<h1>The best of th year by...</h1>
-<span th:text="${name}"></span>
-<ul th:if="${bestMovies.size() > 0}" class="list-group">
-    <li class="list-group-item" th:each="movies : ${bestMovies}" th:text="|${bestMovies.id} ${bestMovies.name}|"></li>
-
-
+<h1>Best of the year by <span th:text="${name}"></span></h1>
+<ul>
+    <li><a href="/view/movies">Best Movies</a></li>
+    <li><a href="/view/songs">Best Songs</a></li>
+</ul>
 </body>
 </html>

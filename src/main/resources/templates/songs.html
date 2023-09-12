@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Songs</title>
+</head>
+<body>
+<h2>Best Songs</h2>
+<ul th:if="${bestSongs.size() > 0}" class="list-group">
+    <li th:each="song : ${bestSongs}">
+        <span th:text="${song.title}"></span>
+    </li>
+</ul>
+</body>
+</html>
