@@ -4,6 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //Step 1
 //Creare un nuovo progetto Spring Boot MVC + Thymeleaf usando lo Spring Initializr.
 //Nel progetto aggiungere un controller che risponde alla root dell’applicazione,
@@ -34,8 +38,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BestOfTheYearController {
    @GetMapping
 
-    public static String getMyName(Model model){
-       return "Annunziata";
+    public String getMyName(Model model){
+      String myName = "Annunziata Posillipo";
+      model.addAttribute("name", myName);
+      return "index";
+   }
+
+  private List<Movies> getBestMovies(){
+       List <Movies> bestMovies = new ArrayList<>();
+
+       bestMovies.add(new Movies(1, "L'enigmista"));
+       bestMovies.add(new Movies(2, "Star Wars"));
+       bestMovies.add(new Movies(3, "Il silenzio degli innocenti"));
+       bestMovies.add(new Movies(4, "American Pie"));
+
+       return bestMovies;
+   }
+
+   private List<Songs> getBestSongs(){
+       List <Songs> bestSongs = new ArrayList<>();
+
+       bestSongs.add(new Songs(1, "The show must go on"));
+       bestSongs.add(new Songs(2, "Thriller"));
+       bestSongs.add(new Songs(2, "November rain"));
+       bestSongs.add(new Songs(2, "Bocca di rosa"));
+       bestSongs.add(new Songs(2, "Non è Francesca"));
+       return bestSongs;
    }
 
 
